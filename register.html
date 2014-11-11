@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title> Register </title>
+	</head>
+	<script type="text/javascript" src="./md5.js"></script> 
+ 
+	<script language="javascript"> 
+	function SubmitForm() { 
+		document.getElementById("password").value = md5(document.getElementById("password").value); 
+		document.getElementById("register").submit();
+	}	 
+	</script> 
+	<body>
+		<form name="register" id="register" method="post" action="api/register.php">
+			username:<input placeholder="username" type="text" name="username" id="username"></input>
+			password:<input placeholder="password" type="password" name="password" id="password"></input>
+			<input type="submit" name="submit" value="submit" onclick="SubmitForm();">
+		</form>
+	</body>
+</html>
